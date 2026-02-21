@@ -14,7 +14,7 @@ const store = createStore({
     actions: {
         async getWeather({commit, state}, city){
             try {
-                let res = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${state.apiKey}`)
+                let res = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${state.apiKey}`)
                 let weather = res.data[0]
                 const {lat, lon, name} = weather
                 // let res2 = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${state.apiKey}&units=metric&lang=RU`)
